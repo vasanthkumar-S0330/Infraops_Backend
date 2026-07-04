@@ -1,0 +1,30 @@
+services:
+  # Spring Boot Backend
+  infraops-backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: infraops-backend
+    ports:
+      - "8081:8080"
+    environment:
+      - SERVER_PORT=8080
+      # By default, it will use the MongoDB Atlas URI in your application.properties.
+      # If you want to use a local MongoDB container, uncomment the lines below and the mongodb service block.
+      # - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/infraops_db
+    restart: unless-stopped
+    # depends_on:
+    #   - mongodb
+
+  # mongodb:
+  #   image: mongo:6.0
+  #   container_name: infraops-mongodb
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongodb_data:/data/db
+  #   restart: unless-stopped
+
+# volumes:
+#   mongodb_data:
+
