@@ -4,7 +4,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    container_name: infraops-backend
+    container_name: infraops-backend01
     ports:
       - "8081:8080"
     environment:
