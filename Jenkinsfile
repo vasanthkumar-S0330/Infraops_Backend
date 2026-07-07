@@ -53,6 +53,7 @@ pipeline {
             steps {
                 sshagent(credentials: [SSH_CREDS_ID]) {
                     sh """
+                        scp -o StrictHostKeyChecking=no docker-compose.yml ${EC2_USER}@${EC2_IP}:/home/${EC2_USER}/docker-compose.yml
                         ssh -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_IP} "
                             export BACKEND_IMAGE=${DOCKER_HUB_USER}/${IMAGE_NAME}:latest &&
                             docker-compose pull infraops-backend &&
