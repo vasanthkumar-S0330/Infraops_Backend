@@ -1,7 +1,9 @@
 services:
   # Spring Boot Backend
   infraops-backend:
-    image: ${BACKEND_IMAGE:-vasanthkumar03/infraops-backend:latest}
+    build: 
+      context: .
+      dockerfile: Dockerfile
     container_name: infraops-backend01
     ports:
       - "8081:8080"
