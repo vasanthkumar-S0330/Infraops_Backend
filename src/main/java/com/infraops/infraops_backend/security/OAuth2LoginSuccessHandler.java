@@ -52,7 +52,7 @@ public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHan
                     .email(email)
                     .firstName(name != null ? name.split(" ")[0] : email.split("@")[0])
                     .lastName(name != null && name.contains(" ") ? name.substring(name.indexOf(" ") + 1) : "")
-                    .role(Role.USER) // Default role
+                    .role(Role.ENGINEER) // Default role
                     .authProvider(provider)
                     .build();
             userRepository.save(newUser);
