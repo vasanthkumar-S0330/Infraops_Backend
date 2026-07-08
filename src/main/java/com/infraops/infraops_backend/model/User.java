@@ -32,6 +32,8 @@ public class User {
 
     private Role role;
 
+    private String authProvider;
+
     @CreatedDate
     private LocalDateTime createdAt;
     
