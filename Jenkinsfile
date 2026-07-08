@@ -7,7 +7,7 @@ pipeline {
         IMAGE_NAME = 'infraops-backend'
         IMAGE_TAG = "${env.BUILD_NUMBER}"
         EC2_USER = 'ubuntu' 
-        EC2_IP = '13.233.155.212'
+        EC2_IP = '43.204.148.189'
         
         // Jenkins credential IDs
         DOCKER_CREDS_ID = 'docker-hub-credentials'
